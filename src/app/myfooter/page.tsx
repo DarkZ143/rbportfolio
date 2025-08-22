@@ -129,8 +129,8 @@ export default function Footer() {
               <li className="cursor-pointer" onClick={() => router.push("mailto:rahulbhardwajthestar58@gmail.com")}>
                 rahulbhardwajthestar58@gmail.com
               </li>
-              <li className="cursor-pointer" onClick={() => router.push("https://rbportfolio-app.vercel.app")}>
-                rbportfolio-app.vercel.app
+              <li className="cursor-pointer" onClick={() => router.push("https://rbportfolio-blond.vercel.app")}>
+                rbportfolio-blond.vercel.app
               </li>
             </ul>
           </div>

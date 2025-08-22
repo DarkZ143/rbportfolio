@@ -68,7 +68,7 @@ export default function HomePage() {
 
           <div className="flex space-x-4">
             <button
-              onClick={() => window.open("https://rbportfolio-app.vercel.app")}
+              onClick={() => window.open("https://rbportfolio-blond.vercel.app")}
               aria-label="View my portfolio"
               className="px-6 py-3 rounded-full cursor-pointer bg-orange-500 text-white font-semibold shadow-md hover:scale-105 hover:shadow-lg transition"
             >

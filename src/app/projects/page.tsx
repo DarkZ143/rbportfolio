@@ -12,7 +12,7 @@ const projects = [
     description:
       "A modern personal portfolio built using Next.js, Figma, Adobe Photoshop, Vanta.js, and EmailJS.",
     tech: "Next.js | Figma | Photoshop | Vanta.js | EmailJS",
-    link: "https://rbportfolio-app.vercel.app",
+    link: "https://rbportfolio-blond.vercel.app",
   },
   {
     title: "Job Platform",
