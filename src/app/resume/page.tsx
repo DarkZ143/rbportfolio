@@ -4,15 +4,17 @@ import Navbar from '../navbar/page'
 import MyFooter from '../myfooter/page'
 import Image from 'next/image'
 import Resume from '@/rbresume.png'
+import Loader from '../comp/loader'
 
 const ResumePage = () => {
   return (
     <div>
-        <Navbar />
-        <h2 className="text-3xl font-extrabold text-blue-500 flex items-center justify-center gap-4 mt-6">
-            <span className="text-orange-500 text-3xl">{'{'}</span>
-            My Resume
-            <span className="text-orange-500 text-3xl">{'}'}</span>
+      <Loader />
+      <Navbar />
+      <h2 className="text-3xl font-extrabold text-blue-500 flex items-center justify-center gap-4 mt-6">
+        <span className="text-orange-500 text-3xl">{'{'}</span>
+        My Resume
+        <span className="text-orange-500 text-3xl">{'}'}</span>
           </h2>
 
         <p className='text-center'>Here you can find my work experience and skills.</p>

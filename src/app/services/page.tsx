@@ -5,6 +5,8 @@ import Myfooter from "../myfooter/page";
 import * as THREE from "three";
 import { useRouter } from "next/navigation";
 import RINGS from "vanta/dist/vanta.rings.min";
+import Loader from "../comp/loader";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Services = () => {
   const router = useRouter();
@@ -51,6 +53,7 @@ const Services = () => {
 
   return (
     <>
+      <Loader />
       <Navbar />
       <section className="py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
@@ -62,56 +65,69 @@ const Services = () => {
 
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service, index) => (
-              <div
+              <motion.div
                 key={index}
                 onClick={() => setSelectedService(service)}
                 className="cursor-pointer bg-white shadow-md rounded-2xl p-6 hover:shadow-xl hover:-translate-y-1 transition"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
               >
                 <h3 className="text-xl font-semibold text-blue-600 mb-2">
                   {service.title}
                 </h3>
                 <p className="text-gray-600">{service.desc}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
       <Myfooter />
 
-      {/* Popup with Vanta Background */}
-      {selectedService && (
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          <div
-            ref={vantaRef}
-            className="bg-gray-900 p-6 rounded-2xl shadow-xl w-96 relative text-white overflow-hidden"
+      {/* Popup with animation */}
+      <AnimatePresence>
+        {selectedService && (
+          <motion.div
+            className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
           >
-            {/* Close Button */}
-            <button
-              className="absolute top-3 right-3 text-gray-300 hover:text-red-500 cursor-pointer z-10"
-              onClick={() => setSelectedService(null)}
+            <motion.div
+              ref={vantaRef}
+              className="bg-gray-900 p-6 rounded-2xl shadow-xl w-96 relative text-white overflow-hidden"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
             >
-              ✕
-            </button>
-
-            {/* Popup Content */}
-            <div className="relative z-10">
-              <h3 className="text-xl font-semibold text-blue-300 mb-2">
-                {selectedService.title}
-              </h3>
-              <p className="text-gray-200 mb-3">{selectedService.desc}</p>
-              <p className="text-lg font-bold text-green-300 mb-4">
-                Price: {selectedService.price}
-              </p>
+              {/* Close Button */}
               <button
-                onClick={() => router.push("/contact")}
-                className="px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition cursor-pointer"
+                className="absolute top-3 right-3 text-gray-300 hover:text-red-500 cursor-pointer z-10"
+                onClick={() => setSelectedService(null)}
               >
-                Contact me 
+                ✕
               </button>
-            </div>
-          </div>
-        </div>
-      )}
+
+              {/* Popup Content */}
+              <div className="relative z-10">
+                <h3 className="text-xl font-semibold text-blue-300 mb-2">
+                  {selectedService.title}
+                </h3>
+                <p className="text-gray-200 mb-3">{selectedService.desc}</p>
+                <p className="text-lg font-bold text-green-300 mb-4">
+                  Price: {selectedService.price}
+                </p>
+                <button
+                  onClick={() => router.push("/contact")}
+                  className="px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition cursor-pointer"
+                >
+                  Contact me
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };

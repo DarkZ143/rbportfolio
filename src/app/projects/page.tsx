@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Download, ExternalLink } from "lucide-react";
 import Navbar from "../navbar/page";
 import Myfooter from "../myfooter/page";
+import Loader from "../comp/loader";
+
 
 const projects = [
   {
@@ -12,7 +14,7 @@ const projects = [
     description:
       "A modern personal portfolio built using Next.js, Figma, Adobe Photoshop, Vanta.js, and EmailJS.",
     tech: "Next.js | Figma | Photoshop | Vanta.js | EmailJS",
-    link: "https://rbportfolio-blond.vercel.app",
+    link: "https://rbportfolio-one.vercel.app",
   },
   {
     title: "Job Platform",
@@ -36,11 +38,11 @@ const projects = [
     link: "/project/clicked/view/under-maintainance",
   },
   {
-    title: "Music Player App",
+    title: "Music Portfolio",
     description:
-      "A sleek and modern music player app designed with user experience in mind.",
+      "A visually captivating music portfolio website with interactive elements and smooth animations.",
     tech: "Figma | React | Next.js | Vanta.js",
-    link: "/project/clicked/view/under-maintainance",
+    link: "https://therbsound.vercel.app",
   },
   {
     title: "DocMagic Converter Pro",
@@ -53,8 +55,11 @@ const projects = [
 ];
 
 export default function Projects() {
+ 
   return (
     <>
+    <Loader />
+     
       <Navbar />
       <section className="bg-gray-100 py-16 px-6">
         <h2 className="text-4xl font-extrabold text-blue-500 mb-12 flex items-center justify-center gap-4">

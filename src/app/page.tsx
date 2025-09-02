@@ -6,6 +6,7 @@ import Image from "next/image";
 import rahulimg from "@/rahulimg.png";
 import FooterPage from "./myfooter/page";
 
+
 const services = [
   {
     title: "UI/UX Design",
@@ -39,7 +40,9 @@ const fadeInUp = {
 
 export default function HomePage() {
   return (
+    
     <main className="min-h-screen bg-white">
+      
       <Navbar />
 
       {/* Hero Section */}

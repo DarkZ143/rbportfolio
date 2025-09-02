@@ -1,6 +1,5 @@
-// app/components/Footer.tsx
 "use client";
-import { FaFacebookF, FaYoutube, FaWhatsapp, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaYoutube, FaWhatsapp, FaInstagram, FaMusic } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
@@ -8,27 +7,31 @@ import emailjs from "@emailjs/browser";
 export default function Footer() {
   const router = useRouter();
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!email) return;
 
+    setStatus("loading"); // show processing state
+
     emailjs
       .send(
-        "service_rb603", // replace with EmailJS Service ID
-        "template_o5uazbl", // replace with EmailJS Template ID
+        "service_rb603", // EmailJS Service ID
+        "template_o5uazbl", // Template ID
         { user_email: email },
-        "gJ7SQmiozgLyTONy1" // replace with EmailJS Public Key
+        "gJ7SQmiozgLyTONy1" // Public Key
       )
       .then(
         () => {
           setStatus("success");
           setEmail("");
+          setTimeout(() => setStatus("idle"), 3000); // reset after 3s
         },
         () => {
           setStatus("error");
+          setTimeout(() => setStatus("idle"), 3000); // reset after 3s
         }
       );
   };
@@ -39,16 +42,18 @@ export default function Footer() {
         {/* Top Section */}
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-3xl font-bold">Lets Connect there</h2>
-          <button className="bg-orange-500 text-white px-6 py-2 rounded-full font-medium hover:bg-orange-600 transition cursor-pointer" onClick={() => window.open("mailto:rahulbhardwajthestar58@gmail.com")}>
+          <button
+            className="bg-orange-500 text-white px-6 py-2 rounded-full font-medium hover:bg-orange-600 transition cursor-pointer"
+            onClick={() => window.open("mailto:rahulbhardwajthestar58@gmail.com")}
+          >
             Hire me →
           </button>
         </div>
 
         <hr className="border-gray-600 mb-8" />
 
-        {/* Middle Section */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Left Brand Info */}
+          {/* Brand Info */}
           <div>
             <div className="flex items-center gap-2 mb-4">
               <div className="bg-blue-500 w-10 h-10 flex items-center justify-center rounded-full font-bold">
@@ -79,7 +84,14 @@ export default function Footer() {
               />
               <FaInstagram
                 className="hover:text-orange-500 cursor-pointer"
-                onClick={() => router.push("https://www.instagram.com/rstarbhardwaj/")}
+                onClick={() =>
+                  router.push("https://www.instagram.com/rstarbhardwaj/")
+                }
+              />
+              {/* 🎵 Music Portfolio Icon */}
+              <FaMusic
+                className="hover:text-orange-500 cursor-pointer"
+                onClick={() => router.push("https://therbsound.vercel.app")}
               />
             </div>
           </div>
@@ -88,36 +100,11 @@ export default function Footer() {
           <div>
             <h3 className="text-orange-500 font-semibold mb-4">Navigation</h3>
             <ul className="space-y-2 text-gray-300">
-              <li
-                className="hover:text-white cursor-pointer"
-                onClick={() => router.push("/")}
-              >
-                Home
-              </li>
-              <li
-                className="hover:text-white cursor-pointer"
-                onClick={() => router.push("/about")}
-              >
-                About Us
-              </li>
-              <li
-                className="hover:text-white cursor-pointer"
-                onClick={() => router.push("/services")}
-              >
-                Services
-              </li>
-              <li
-                className="hover:text-white cursor-pointer"
-                onClick={() => router.push("/resume")}
-              >
-                Resume
-              </li>
-              <li
-                className="hover:text-white cursor-pointer"
-                onClick={() => router.push("/projects")}
-              >
-                Project
-              </li>
+              <li className="hover:text-white cursor-pointer" onClick={() => router.push("/")}>Home</li>
+              <li className="hover:text-white cursor-pointer" onClick={() => router.push("/about")}>About Us</li>
+              <li className="hover:text-white cursor-pointer" onClick={() => router.push("/services")}>Services</li>
+              <li className="hover:text-white cursor-pointer" onClick={() => router.push("/resume")}>Resume</li>
+              <li className="hover:text-white cursor-pointer" onClick={() => router.push("/projects")}>Project</li>
             </ul>
           </div>
 
@@ -125,12 +112,15 @@ export default function Footer() {
           <div>
             <h3 className="text-orange-500 font-semibold mb-4">Contact</h3>
             <ul className="space-y-2 text-gray-300 text-sm">
-              <li className="cursor-pointer" onClick={() => router.push("tel:+919479880143")}>+91 9479880143 </li>
+              <li className="cursor-pointer" onClick={() => router.push("tel:+919479880143")}>+91 9479880143</li>
               <li className="cursor-pointer" onClick={() => router.push("mailto:rahulbhardwajthestar58@gmail.com")}>
                 rahulbhardwajthestar58@gmail.com
               </li>
               <li className="cursor-pointer" onClick={() => router.push("https://rbportfolio-one.vercel.app")}>
                 rbportfolio-one.vercel.app
+              </li>
+              <li className="cursor-pointer" onClick={() => router.push("https://therbsound.vercel.app")}>
+                therbsound.vercel.app
               </li>
             </ul>
           </div>
@@ -154,15 +144,19 @@ export default function Footer() {
               />
               <button
                 type="submit"
-                className="bg-blue-500 px-4 text-white hover:bg-blue-700"
+                className={`px-6 py-2 text-white font-medium transition ${status === "loading"
+                    ? "bg-gray-400 cursor-not-allowed"
+                    : "bg-blue-500 hover:bg-blue-700"
+                  }`}
+                disabled={status === "loading"}
               >
-                →
+                {status === "loading" ? "Sending..." : "→"}
               </button>
             </form>
 
             {/* Status Message */}
             {status === "success" && (
-              <p className="text-green-400 mt-2 text-sm">✅ Sent successfully!</p>
+              <p className="text-green-400 mt-2 text-sm">✅ Subscribed successfully!</p>
             )}
             {status === "error" && (
               <p className="text-red-400 mt-2 text-sm">❌ Something went wrong.</p>
@@ -172,7 +166,7 @@ export default function Footer() {
 
         <hr className="border-gray-600 mt-8 mb-4" />
 
-        {/* Bottom Section */}
+        {/* Bottom */}
         <div className="flex flex-col md:flex-row justify-between text-gray-400 text-sm">
           <p>Copyright© 2025 Rahul Bhardwaj. All Rights Reserved.</p>
           <p>User Terms & Conditions | Privacy Policy</p>
