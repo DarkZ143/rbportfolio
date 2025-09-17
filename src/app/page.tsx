@@ -13,18 +13,21 @@ const services = [
     description:
       "Creating modern, user-friendly, and intuitive designs with seamless user experiences.",
     image: "/uximage.png",
+    Link: "https://rbportfolio-one.vercel.app/projects",
   },
   {
     title: "Web Design",
     description:
       "Crafting responsive, visually appealing websites optimized for performance.",
     image: "/web.jpg",
+    Link: "https://rbportfolio-one.vercel.app/projects",
   },
   {
     title: "Sound Design",
     description:
       "Creating immersive soundscapes and audio experiences that enhance your projects.",
     image: "/sound.png",
+    Link: "https://therbsound.vercel.app/",
   },
 ];
 
@@ -40,9 +43,9 @@ const fadeInUp = {
 
 export default function HomePage() {
   return (
-    
+
     <main className="min-h-screen bg-white">
-      
+
       <Navbar />
 
       {/* Hero Section */}
@@ -73,14 +76,14 @@ export default function HomePage() {
             <button
               onClick={() => window.open("https://rbportfolio-blond.vercel.app")}
               aria-label="View my portfolio"
-              className="px-6 py-3 rounded-full cursor-pointer bg-orange-500 text-white font-semibold shadow-md hover:scale-105 hover:shadow-lg transition"
+              className="px-6 py-3 rounded-full cursor-pointer bg-orange-500 text-white font-semibold shadow-md shadow-orange-400 hover:scale-105 hover:shadow-lg transition"
             >
               Portfolio →
             </button>
             <button
               onClick={() => window.open("mailto:rahulbhardwajthestar58@gmail.com")}
               aria-label="Hire me"
-              className="px-6 py-3 rounded-full cursor-pointer bg-blue-500 text-white font-semibold shadow-md hover:scale-105 hover:shadow-lg transition"
+              className="px-6 py-3 rounded-full cursor-pointer bg-blue-500 text-white font-semibold shadow-md shadow-blue-400 hover:scale-105 hover:shadow-lg transition"
             >
               Hire Me
             </button>
@@ -94,7 +97,7 @@ export default function HomePage() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-orange-200 shadow-lg">
+          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-orange-200 shadow-lg shadow-amber-600">
             <Image
               src={rahulimg}
               alt="Rahul Bhardwaj"
@@ -105,8 +108,8 @@ export default function HomePage() {
           </div>
 
           <div className="mt-6 text-center">
-            <p className="text-lg font-semibold">2 Years</p>
-            <p className="text-gray-500">Hands-On Experience</p>
+            <p className="text-lg font-semibold">1 Year</p>
+            <p className="text-gray-500">Project Based Experience</p>
           </div>
         </motion.div>
       </section>
@@ -115,18 +118,21 @@ export default function HomePage() {
       <section className="px-6 md:px-16 lg:px-28 py-20 bg-gradient-to-b from-black via-gray-900 to-black">
         <div className="grid md:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <motion.div
+            <motion.a
               key={index}
+              href={service.Link}
+              target="_blank"
+              rel="noopener noreferrer"
               variants={fadeInUp}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
               custom={index}
-              className="relative group bg-white/5 backdrop-blur-lg border border-white/10 p-6 rounded-2xl hover:shadow-2xl hover:shadow-orange-500/20 transition-all hover:-translate-y-2"
+              className="relative group bg-white/5 backdrop-blur-lg border border-white/10 p-6 rounded-2xl 
+                   hover:shadow-2xl hover:shadow-orange-500/20 transition-all hover:-translate-y-2 
+                   cursor-pointer block"
             >
-              <h3 className="text-xl font-semibold text-white mb-4">
-                {service.title}
-              </h3>
+              <h3 className="text-xl font-semibold text-white mb-4">{service.title}</h3>
 
               <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-4">
                 <Image
@@ -134,18 +140,16 @@ export default function HomePage() {
                   alt={service.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  sizes="(max-width: 768px) 100vw, 33vw" // ✅ optimize for responsiveness
+                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
               </div>
 
-
               <p className="text-gray-400 mb-6">{service.description}</p>
-
-
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </section>
+
       <FooterPage />
     </main>
 

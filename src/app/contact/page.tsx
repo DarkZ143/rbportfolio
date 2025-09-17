@@ -49,8 +49,11 @@ const ContactPage = () => {
           {/* Heading */}
           <div className="text-center mb-12">
             <h2 className="text-4xl font-extrabold text-blue-500 mb-4">
-              <span className="text-orange-500">{'{'}</span> Contact Me{' '}
-              <span className="text-orange-500">{'}'}</span>
+              <span className="text-orange-500">{'{ '}</span> 
+              <span className="text-blue-600 bg-blue-100 px-4 py-1 rounded-xl shadow-sm">
+               Contact Me{'  '}
+              </span>
+              <span className="text-orange-500">{'  }'}</span>
             </h2>
             <p className="lg:w-2/3 mx-auto leading-relaxed text-gray-600">
               Whatever your project is about, I am here to help.
@@ -60,7 +63,7 @@ const ContactPage = () => {
           {/* Form Card */}
           <form
             onSubmit={handleSubmit}
-            className="lg:w-1/2 md:w-2/3 mx-auto bg-white shadow-xl rounded-2xl p-8 border border-gray-100"
+            className="lg:w-1/2 md:w-2/3 mx-auto bg-white shadow-xl shadow-blue-300 rounded-2xl p-8 border border-gray-100"
           >
             <div className="flex flex-wrap -m-2">
               {/* Name */}
@@ -109,7 +112,7 @@ const ContactPage = () => {
                 <button
                   type="submit"
                   disabled={status === 'loading'}
-                  className="w-full cursor-pointer bg-gradient-to-r from-blue-500 to-orange-500 text-white font-semibold py-3 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 flex items-center justify-center"
+                  className="w-full cursor-pointer bg-gradient-to-r from-blue-500 to-orange-500 text-white font-semibold py-3 rounded-xl shadow-lg shadow-orange-200 hover:shadow-blue-400 hover:scale-105 transition-transform duration-300 flex items-center justify-center"
                 >
                   {status === 'loading' ? (
                     <span className="flex items-center gap-2">

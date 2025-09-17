@@ -59,7 +59,9 @@ const Services = () => {
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl font-extrabold text-blue-500 mb-12 flex items-center justify-center gap-4">
             <span className="text-orange-500 text-4xl">{'{'}</span>
-            Services
+            <span className="text-blue-600 bg-blue-100 px-4 py-1 rounded-xl shadow-sm">
+              Services
+            </span>
             <span className="text-orange-500 text-4xl">{'}'}</span>
           </h2>
 
@@ -68,7 +70,7 @@ const Services = () => {
               <motion.div
                 key={index}
                 onClick={() => setSelectedService(service)}
-                className="cursor-pointer bg-white shadow-md rounded-2xl p-6 hover:shadow-xl hover:-translate-y-1 transition"
+                className="cursor-pointer bg-white shadow-md shadow-orange-300 hover:shadow-lg hover:shadow-blue-400 rounded-2xl p-6 hover:shadow-xl hover:-translate-y-1 transition"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
               >

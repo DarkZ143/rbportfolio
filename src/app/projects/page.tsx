@@ -24,17 +24,33 @@ const projects = [
     link: "https://indusjob-app.vercel.app",
   },
   {
-    title: "E-commerce Website",
+    title: "Fast Book - Ticket Booking App (UX/UI)",
     description:
-      "An advanced online shopping platform built with scalable design and dynamic UI.",
-    tech: "Next.js | Figma | Photoshop | Vanta.js | EmailJS | MySQL",
-    link: "/project/clicked/view/under-maintainance"
+      "A complete Android app UX/UI prototype designed in Figma for seamless ticket booking experience.",
+    tech: "Figma (UX/UI Design)",
+    link: "https://www.figma.com/design/75Wh0pebAEaPZ16RYSEHcg/Android-App-works?node-id=0-1&m=dev&t=DeIinvh8YiRDZHhF-1", // replace with your actual Figma file link
+  },
+  {
+    title: "IoT Coffee Machine (UX/UI)",
+    description:
+      "A smart IoT-based coffee machine UI/UX design built in Figma, showcasing intuitive controls for multiple beverage options.",
+    tech: "Figma (IoT UI/UX Design)",
+    link: "https://www.figma.com/design/dVZRwI1GO1MMWWr1x4afQj/Coffee-Machine?node-id=2004-2&m=dev&t=craEcUhqTAhfOTsb-1", // replace if you have Figma link
+
+  },
+  {
+    title: "E-commerce Android App (UX/UI)",
+    description:
+      "A modern and intuitive e-commerce Android app design created in Figma, focusing on smooth shopping experience and clean UI components.",
+    tech: "Figma (UX/UI Design)",
+    link: "https://www.figma.com/design/75Wh0pebAEaPZ16RYSEHcg/Android-App-works?node-id=131-1007&m=dev&t=N534ejGZuKk3rsZL-1", // replace with your actual Figma file link
+    // image: "/ecommerce-app.png", // optional → add preview if you place an image in /public
   },
   {
     title: "Social Media App Design",
     description:
       "A social media app UI/UX prototype designed entirely in Figma.",
-    tech: "Figma only",
+    tech: "Figma  (UX/UI Design)",
     link: "/project/clicked/view/under-maintainance",
   },
   {
@@ -51,28 +67,30 @@ const projects = [
     tech: "Python | GUI | High Performance",
     downloadLink: "/DMC.zip",
   },
-  
+
 ];
 
 export default function Projects() {
- 
+
   return (
     <>
-    <Loader />
-     
+      <Loader />
+
       <Navbar />
       <section className="bg-gray-100 py-16 px-6">
         <h2 className="text-4xl font-extrabold text-blue-500 mb-12 flex items-center justify-center gap-4">
-            <span className="text-orange-500 text-4xl">{'{'}</span>
+          <span className="text-orange-500 text-4xl">{'{'}</span>
+          <span className="text-blue-600 bg-blue-100 px-4 py-1 rounded-xl shadow-sm">
             Projects
-            <span className="text-orange-500 text-4xl">{'}'}</span>
-          </h2>
+          </span>
+          <span className="text-orange-500 text-4xl">{'}'}</span>
+        </h2>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="shadow-lg rounded-2xl bg-white border border-gray-200 hover:shadow-2xl transition-all duration-300"
+              className="rounded-2xl bg-white border border-gray-200 shadow-[0_4px_12px_rgba(59,130,246,0.5)] hover:shadow-[0_8px_20px_rgba(59,130,246,0.6)] transition-all duration-300"
             >
               <CardContent className="p-6 flex flex-col justify-between h-full">
                 <div>

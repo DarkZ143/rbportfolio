@@ -28,8 +28,8 @@ export default function Navbar() {
       onClick={() => setOpen(false)} // close menu when clicked
       className={`block px-4 py-2 rounded-full font-medium transition ${
         pathname === href
-          ? "bg-blue-500 text-white"
-          : "text-black hover:text-blue-600"
+          ? "bg-blue-500 text-white shadow-md shadow-orange-300"
+          : "text-black hover:text-blue-600 hover:shadow-md hover:shadow-blue-400"
       }`}
     >
       {name}
@@ -37,12 +37,12 @@ export default function Navbar() {
   );
 
   return (
-    <nav className="w-full px-6 py-4 border-b bg-white">
+    <nav className="w-full px-6 py-4 border-b bg-white shadow-md shadow-blue-400">
       {/* Wrapper */}
       <div className="flex justify-between items-center lg:grid lg:grid-cols-3">
         
         {/* Left Nav (desktop only) */}
-        <ul className="hidden lg:flex justify-end items-center space-x-6">
+        <ul className="hidden lg:flex justify-end items-center space-x-6 ">
           {leftNav.map((item) => (
             <li key={item.name}>
               <NavLink href={item.href} name={item.name} />

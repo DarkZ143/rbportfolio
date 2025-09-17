@@ -19,7 +19,7 @@ const ResumePage = () => {
 
         <p className='text-center'>Here you can find my work experience and skills.</p>
         <div className='flex justify-center'>
-        <Image src={Resume} alt="Resume" className=" mt-4 w-1/2" />
+        <Image src={Resume} alt="Resume" className=" mt-4 w-1/2 shadow-lg shadow-blue-400" />
         </div>
         <br />
         <div className="flex justify-center">
