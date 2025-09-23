@@ -10,11 +10,11 @@ import Loader from "../comp/loader";
 
 const projects = [
   {
-    title: "My Portfolio",
+    title: "Product Designs",
     description:
-      "A modern personal portfolio built using Next.js, Figma, Adobe Photoshop, Vanta.js, and EmailJS.",
-    tech: "Next.js | Figma | Photoshop | Vanta.js | EmailJS",
-    link: "https://rbportfolio-one.vercel.app",
+      "A collection of sleek and modern product designs showcasing various UI/UX and branding concepts.",
+    tech: "Figma | Photoshop ",
+    link: "/product-designs",
   },
   {
     title: "Job Platform",

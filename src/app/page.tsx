@@ -13,7 +13,7 @@ const services = [
     description:
       "Creating modern, user-friendly, and intuitive designs with seamless user experiences.",
     image: "/uximage.png",
-    Link: "https://rbportfolio-one.vercel.app/projects",
+    Link: "https://rbportfolio-one.vercel.app/product-designs",
   },
   {
     title: "Web Design",
@@ -74,11 +74,11 @@ export default function HomePage() {
 
           <div className="flex space-x-4">
             <button
-              onClick={() => window.open("https://rbportfolio-blond.vercel.app")}
+              onClick={() => window.open("/product-designs", "_blank")}
               aria-label="View my portfolio"
               className="px-6 py-3 rounded-full cursor-pointer bg-orange-500 text-white font-semibold shadow-md shadow-orange-400 hover:scale-105 hover:shadow-lg transition"
             >
-              Portfolio →
+              Designs
             </button>
             <button
               onClick={() => window.open("mailto:rahulbhardwajthestar58@gmail.com")}
