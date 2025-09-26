@@ -14,7 +14,7 @@ const projects = [
     description:
       "A powerful offline document editor with multiple functionalities (PDF/Image conversions, merging, splitting, resizing, etc.). Built using Electron JS.",
     tech: "Electron | GUI | High Performance",
-    downloadLink: "/DMC.rar",
+    downloadLink: "https://drive.google.com/file/d/1OI0qbIIT5XtjNAcllYX80yLSFXU0NN9l/view?usp=sharing",
   },
   {
     title: "Product Designs",
@@ -148,3 +148,4 @@ export default function Projects() {
     </>
   );
 }
+
