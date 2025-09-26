@@ -10,6 +10,13 @@ import Loader from "../comp/loader";
 
 const projects = [
   {
+    title: "DocMagic Converter & Manager",
+    description:
+      "A powerful offline document editor with multiple functionalities (PDF/Image conversions, merging, splitting, resizing, etc.). Built using Electron JS.",
+    tech: "Electron | GUI | High Performance",
+    downloadLink: "/DMC.rar",
+  },
+  {
     title: "Product Designs",
     description:
       "A collection of sleek and modern product designs showcasing various UI/UX and branding concepts.",
@@ -60,13 +67,7 @@ const projects = [
     tech: "Figma | React | Next.js | Vanta.js",
     link: "https://therbsound.vercel.app",
   },
-  {
-    title: "DocMagic Converter Pro",
-    description:
-      "A powerful offline document editor with multiple functionalities (PDF/Image conversions, merging, splitting, resizing, etc.). Built using Python.",
-    tech: "Python | GUI | High Performance",
-    downloadLink: "/DMC.zip",
-  },
+  
 
 ];
 
