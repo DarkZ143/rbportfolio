@@ -64,11 +64,11 @@ export default function HomePage() {
 
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
             I&apos;m <span className="text-orange-500">Rahul</span>, <br />
-            UX & UI Designer || Sound Designer
+            Front-End-Developer || UX & UI Designer
           </h1>
 
           <p className="text-gray-600 text-lg max-w-md">
-            “Rahul’s exceptional UX & UI and Sound Designer ensures your projects success.
+            “Rahul’s exceptional Web Development and UX & UI Designing ensures your projects success.
             Highly recommended.”
           </p>
 
