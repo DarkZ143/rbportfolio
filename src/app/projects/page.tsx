@@ -17,12 +17,26 @@ const projects = [
     downloadLink: "https://drive.google.com/file/d/1OI0qbIIT5XtjNAcllYX80yLSFXU0NN9l/view?usp=sharing",
   },
   {
+  title: "Dessert Ordering Website (Ongoing)",
+  description:
+    "An online dessert ordering platform with interactive UI and real-time functionalities. Designed in Figma and developed with modern web technologies.",
+  tech: "Figma | Next.js | React | TypeScript | Firebase | TailwindCSS",
+  link: "https://dessertwala.netlify.app",
+},
+  {
     title: "Product Designs",
     description:
       "A collection of sleek and modern product designs showcasing various UI/UX and branding concepts.",
     tech: "Figma | Photoshop ",
     link: "/product-designs",
   },
+  {
+  title: "Client Portfolio - CK",
+  description:
+    "A professional portfolio website showcasing personal branding and projects, built with responsive design and modern UI practices.",
+  tech: "React | Next.js | Figma | TypeScript | TailwindCSS | ChatGPT",
+  link: "https://iamck.vercel.app",
+},
   {
     title: "Job Platform",
     description:
@@ -31,12 +45,26 @@ const projects = [
     link: "https://indusjob-app.vercel.app",
   },
   {
+  title: "Client Portfolio - Hirdyansh",
+  description:
+    "A sleek portfolio for a client, focusing on clean design and interactive UI elements to enhance user experience.",
+  tech: "React | Next.js | Figma | TypeScript | TailwindCSS | ChatGPT",
+  link: "https://iamhirdyansh.vercel.app",
+},
+  {
     title: "Fast Book - Ticket Booking App (UX/UI)",
     description:
       "A complete Android app UX/UI prototype designed in Figma for seamless ticket booking experience.",
     tech: "Figma (UX/UI Design)",
     link: "https://www.figma.com/design/75Wh0pebAEaPZ16RYSEHcg/Android-App-works?node-id=0-1&m=dev&t=DeIinvh8YiRDZHhF-1", // replace with your actual Figma file link
   },
+  {
+  title: "Client Portfolio - Anushka",
+  description:
+    "A customized client portfolio emphasizing creativity, responsiveness, and user-friendly navigation.",
+  tech: "React | Next.js | Figma | TypeScript | TailwindCSS | ChatGPT",
+  link: "https://theanushka.netlify.app",
+},
   {
     title: "IoT Coffee Machine (UX/UI)",
     description:
@@ -148,4 +176,5 @@ export default function Projects() {
     </>
   );
 }
+
 
