@@ -42,7 +42,7 @@ const projects = [
     description:
       "A complete job platform web app with sleek UI and seamless user experience.",
     tech: "Next.js | Figma | Photoshop | Vanta.js | Firebase | EmailJS",
-    link: "https://indusjob-app.vercel.app",
+    link: "https://indusjob.vercel.app",
   },
   {
   title: "Client Portfolio - Hirdyansh",
@@ -176,5 +176,6 @@ export default function Projects() {
     </>
   );
 }
+
 
 
