@@ -14,7 +14,7 @@ const projects = [
     description:
       "A powerful offline document editor with multiple functionalities (PDF/Image conversions, merging, splitting, resizing, etc.). Built using Electron JS.",
     tech: "Electron | GUI | High Performance",
-    downloadLink: "https://drive.google.com/file/d/1OI0qbIIT5XtjNAcllYX80yLSFXU0NN9l/view?usp=sharing",
+    downloadLink: "https://github.com/DarkZ143/DocMagic/releases/download/v1.0.7/DocmagicSetup.exe",
   },
   {
   title: "Dessert Ordering Website (Ongoing)",
@@ -176,6 +176,7 @@ export default function Projects() {
     </>
   );
 }
+
 
 
 
