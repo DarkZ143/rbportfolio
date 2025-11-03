@@ -14,7 +14,7 @@ const projects = [
     description:
       "A powerful offline document editor with multiple functionalities (PDF/Image conversions, merging, splitting, resizing, etc.). Built using Electron JS.",
     tech: "Electron | GUI | High Performance",
-    link: "https://docsmagic.netlify.app",
+    downloadLink: "https://docsmagic.netlify.app",
   },
   {
     title: "Bhardwaj Innovation",
@@ -183,6 +183,7 @@ export default function Projects() {
     </>
   );
 }
+
 
 
 
