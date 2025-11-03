@@ -14,7 +14,14 @@ const projects = [
     description:
       "A powerful offline document editor with multiple functionalities (PDF/Image conversions, merging, splitting, resizing, etc.). Built using Electron JS.",
     tech: "Electron | GUI | High Performance",
-    downloadLink: "https://drive.google.com/file/d/1f8zAb76tSxIrwfbDOmqez9X6W6rDWMmw/view?usp=drive_link",
+    link: "https://docsmagic.netlify.app",
+  },
+  {
+    title: "Bhardwaj Innovation",
+    description:
+      "A product based company website with 3D designes and immersive screen experinces.",
+    tech: "Figma | Next.js | React | TypeScript | Firebase | TailwindCSS",
+    link: "https://binv.netlify.app",
   },
   {
   title: "Dessert Ordering Website (Ongoing)",
@@ -176,6 +183,7 @@ export default function Projects() {
     </>
   );
 }
+
 
 
 
